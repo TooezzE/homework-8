@@ -106,6 +106,7 @@ public class Main {
         while(startYear < futureVisits){
             System.out.println(startYear);
             startYear = startYear + 79;
+
         }
     }
 }
