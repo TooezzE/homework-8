@@ -39,9 +39,9 @@ public class Main {
     public static void task3() {
         System.out.println("Задача 3");
         int population = 12_000_000;
-        int birthRate = 12_000 * 17;
-        int deathRate = 12_000 * 8;
         for(int i = 0; i < 11; i++){
+            int birthRate = population * 17/1000;
+            int deathRate = population * 8/1000;
             population = population + (birthRate - deathRate);
             System.out.println("Год " + i + ", численность населения составляет " + population);
         }
@@ -97,16 +97,12 @@ public class Main {
     public static void task8() {
         System.out.println("Задача 8");
         int startYear = 2020;
-        int pastVisits = startYear + 200;
-        while(startYear < pastVisits){
-            System.out.println(startYear);
-            startYear = startYear + 79;
-        }
-        int futureVisits = pastVisits + 100;
-        while(startYear < futureVisits){
-            System.out.println(startYear);
-            startYear = startYear + 79;
-
+        int pastVisits = startYear - 200;
+        int futureVisits = startYear + 100;
+        for(; pastVisits < futureVisits; pastVisits++) {
+            if (pastVisits % 79 == 0) {
+                System.out.println(pastVisits);
+            }
         }
     }
 }
